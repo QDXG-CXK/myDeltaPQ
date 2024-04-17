@@ -246,6 +246,11 @@ int main(int argc, char* argv[]){
         int M_arg;
         M_arg = PQ_M + sizeof(int);
         diff_argument = PQ_M + sizeof(int);
+        m_sub_distances = new float*[PQ_M]; // m_sub_distances defined in .h file
+        for (int i = 0; i < PQ_M; i++) {
+            m_sub_distances[i] = new float[PQ_K];
+            memset(m_sub_distances[i], 0, sizeof(float)*PQ_K);
+        }
         bool file_read = create_approx_tree(dataset, vecs, dummycodes, 
                         dummymarks, M_arg, PQ_K, num_codes, diff_argument, 
                         nodes, m_sub_distances,

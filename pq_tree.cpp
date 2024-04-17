@@ -391,9 +391,6 @@ vector<pair<int, float> > PQTree::SampledQuery(vector<float> &query, int id) {
     return results;
 }
 #ifdef PLAIN_PQ
-auto comp_max_heap = [](const pair<int, float> &a, const pair<int, float> &b) {
-    return a.second < b.second;
-};
 void print_heap(vector<pair<int, float>>& test) {
     for (int i = 0; i < test.size(); i ++) {
         cout << test[i].first << ", " << test[i].second << "    ";
